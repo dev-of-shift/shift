@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   get "workdays/week" => "workdays#week"
   get "workdays/day" => "workdays#day"
 
+resources :places, only:[:index, :create]
+resources :workers, only:[:index, :create]
+
+
+
 end

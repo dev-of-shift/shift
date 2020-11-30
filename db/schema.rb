@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_064617) do
+ActiveRecord::Schema.define(version: 2020_11_30_085308) do
 
   create_table "members", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 2020_11_30_064617) do
   create_table "workdays", force: :cascade do |t|
     t.integer "member_id"
     t.boolean "workday_flag", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "workers", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

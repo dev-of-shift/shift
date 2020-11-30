@@ -1,0 +1,18 @@
+h1 Place index
+
+- @places.each do |place|
+  h2 = place.name
+= form_with(model: @place, local: true) do |f|
+  = f.text_field :name
+  = f.submit "追加"
+
+
+
+  h1 Worker index
+
+- @workers.each do |worker|
+  h2 = worker.name
+
+= form_with(model: @worker, local: true) do |f|
+  = f.text_field :name
+  = f.submit "追加"
