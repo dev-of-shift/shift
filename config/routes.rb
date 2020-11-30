@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :members
+  get "workdays/month" => "workdays#month"
+  get "workdays/week" => "workdays#week"
+  get "workdays/day" => "workdays#day"
+
 end
