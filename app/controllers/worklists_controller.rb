@@ -1,0 +1,2 @@
+class WorklistsController < ApplicationController
+end
