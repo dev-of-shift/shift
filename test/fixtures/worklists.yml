@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workday_id: 1
+  list_num: MyString
+  list_day: MyString
+
+two:
+  workday_id: 1
+  list_num: MyString
+  list_day: MyString
