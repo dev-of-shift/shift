@@ -14,6 +14,18 @@ def create
 
 end
 
+def update
+  @place = Place.find(params[:id])
+  @place.update(place_params)
+  redirect_to places_path
+end
+
+def destroy
+  @place = Place.find(params[:id])
+  @place.destroy
+  redirect_to places_path, notice: "担当箇所名を削除しました。。"
+end
+
 private
 def place_params
   params.require(:place).permit(:name)

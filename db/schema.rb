@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_085308) do
+ActiveRecord::Schema.define(version: 2020_12_02_061247) do
 
   create_table "members", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2020_11_30_085308) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.integer "member_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "worker_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_085308) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "place_id"
   end
 
   create_table "worklists", force: :cascade do |t|
@@ -59,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_11_30_085308) do
     t.string "list_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "list_hour"
+    t.integer "list_minutes"
   end
 
 end
