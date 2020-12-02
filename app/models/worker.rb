@@ -1,3 +1,3 @@
 class Worker < ApplicationRecord
-  # has_many :places, dependent: :destroy
+  # has_many :places
 end

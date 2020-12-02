@@ -17,9 +17,11 @@ h1 Place index
 - @workers.each do |worker|
   = form_with(model: worker, local: true) do |f|
     = f.text_field :name
+    = f.collection_select(:place_id, @places, :id, :name)
     = f.submit "変更を修正する", data: {confirm: "更新しますか？"} 
     = link_to "削除", worker_path(worker), method: :delete, data: {confirm: "削除しますか？"} 
 
 = form_with(model: @worker, local: true) do |f|
   = f.text_field :name
+  = f.collection_select(:place_id, @places, :id, :name)
   = f.submit "追加"
