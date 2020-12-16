@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
 resources :places, only:[:index, :create, :update, :destroy]
 resources :workers, only:[:index, :create, :update, :destroy]
+resources :worklists, only:[:index, :create, :update, :destroy]
 
 
 
