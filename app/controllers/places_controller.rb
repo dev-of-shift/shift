@@ -5,6 +5,8 @@ def index
   @places = Place.all
   @worker = Worker.new
   @workers = Worker.all
+  @worklist = Worklist.new
+  @worklists = Worklist.all
 end
 
 def create
@@ -23,7 +25,7 @@ end
 def destroy
   @place = Place.find(params[:id])
   @place.destroy
-  redirect_to places_path, notice: "担当箇所名を削除しました。。"
+  redirect_to places_path
 end
 
 private

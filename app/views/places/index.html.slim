@@ -12,7 +12,7 @@ h1 Place index
 
 
 
-  h1 Worker index
+h1 Worker index
 
 - @workers.each do |worker|
   = form_with(model: worker, local: true) do |f|
@@ -25,3 +25,21 @@ h1 Place index
   = f.text_field :name
   = f.collection_select(:place_id, @places, :id, :name)
   = f.submit "追加"
+
+
+h1 Worklist index
+
+- @worklists.each do |list|
+  = form_with(model: list, local:true) do |f|
+    = f.text_field :list_num
+    = f.text_field :list_hour
+    a ：
+    = f.text_field :list_minutes 
+    = f.submit "変更を修正する", data: {confirm: "更新しますか？"} 
+    = link_to "削除", worklist_path(list), method: :delete, data: {confirm: "削除しますか？"} 
+
+= form_with(model: @worklist, local:true) do |f|
+  = f.text_field :list_num, placeholder: "略称"
+  = f.text_field :list_hour, placeholder: "開始時間（時）"
+  = f.text_field :list_minutes, placeholder: "開始時間（分）"
+  = f.submit "リストに追加"
