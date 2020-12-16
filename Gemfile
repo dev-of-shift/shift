@@ -61,6 +61,7 @@ end
 # ===add gemfiles===
 
 gem 'devise'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'pry-byebug', group: :development
 gem 'slim-rails'
