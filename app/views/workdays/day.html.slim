@@ -8,9 +8,10 @@ p = @date_now
 span = link_to "Prev", workdays_day_path(p: @x)
 span = link_to "Next", workdays_day_path(n: @x)
 
-table.table.table-bordered
-  thead
-    tr
-      th
-      - @time.each do |c|
-        td = c.strftime("%H:%M")
+#workdays-day
+  table.table.table-bordered
+    thead
+      tr
+        th
+        - @time.each do |c|
+          td = c.strftime("%H:%M")

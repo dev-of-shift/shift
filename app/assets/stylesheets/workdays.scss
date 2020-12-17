@@ -1,3 +1,51 @@
 // Place all the styles related to the workdays controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#workdays-month{
+  table{
+    border: 1px solid #bbb;
+    table-layout: fixed;
+    width: 1500px;
+
+    thead{
+      border: 1px solid #bbb;
+
+      tr{
+        border: 1px solid #bbb;
+
+        th{
+          width: 80px;
+          padding: 6px 0;
+          font-size: .8rem;
+        }
+
+        td{
+          font-size: .8rem;
+          border: 1px solid #bbb;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+#workdays-day{
+
+  table{
+    table-layout: fixed;
+    width: 1200px;
+
+    thead{
+      tr{
+        th{
+
+        }
+        td{
+          font-size: .6rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
