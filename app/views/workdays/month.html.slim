@@ -8,19 +8,23 @@ p = @date_now.strftime("%Y/%m")
 span = link_to "Prev", workdays_month_path(p: @x)
 span = link_to "Next", workdays_month_path(n: @x)
 
-table.table.table-bordered
-  thead
-    tr
-      th　月日
-      - @calender.each do |c|
-       td = "#{c.month}/#{c.day}"
+#workdays-month
+  table
+    thead
+      tr
+        th 月日
+        - @calender.each do |c|
+          - if c.day == 1
+            td = "#{c.strftime("%m")}/#{c.strftime("%d")}"
+          - else
+            td = "#{c.day}"
 
-  thead
-    tr
-      th 曜日
-      - @calender.each do |c|
-        td = @weeks[c.wday]
+    thead
+      tr
+        th 曜日
+        - @calender.each do |c|
+          td = @weeks[c.wday]
 
-  tbody
-    tr.name
-      th 田中
+    tbody
+      tr
+        th
