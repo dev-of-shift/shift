@@ -14,3 +14,12 @@ table.table.table-bordered
       th
       - @week_calender.each do |c|
         td = "#{c.day} #{@weeks[c.wday]}"
+
+  thead
+    tr
+  tbody
+    - @workers.each do |worker|
+      tr
+        td = worker.name
+        td
+

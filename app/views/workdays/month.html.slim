@@ -28,3 +28,11 @@ span = link_to "Next", workdays_month_path(n: @x)
     tbody
       tr
         th
+
+    thead
+      tr
+    tbody
+      - @workers.each do |worker|
+        tr
+          td = worker.name
+          td
