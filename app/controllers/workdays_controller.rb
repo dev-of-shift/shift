@@ -9,6 +9,7 @@ class WorkdaysController < ApplicationController
     firstDay = date_now.beginning_of_month
     firstDayIndex = firstDay.wday
     @calender = Array.new(35){|i|i}.map{ |i| firstDay + (i-firstDayIndex)}
+    @workers = Worker.all
   end
 
   def week
