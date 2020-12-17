@@ -15,3 +15,11 @@ span = link_to "Next", workdays_day_path(n: @x)
         th
         - @time.each do |c|
           td = c.strftime("%H:%M")
+
+  thead
+    tr
+  tbody
+    - @workers.each do |worker|
+      tr
+        td = worker.name
+        td

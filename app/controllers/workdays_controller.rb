@@ -17,7 +17,7 @@ class WorkdaysController < ApplicationController
     firstDay = @date_now.beginning_of_month
     firstDayIndex = firstDay.wday
     @calender = Array.new(35){|i| firstDay + (i - firstDayIndex)}
-
+    @workers = Worker.all
   end
 
   def week
@@ -35,6 +35,8 @@ class WorkdaysController < ApplicationController
 
     this_monday = @date_now - (@date_now.wday - 1)
     @week_calender = Array.new(7){|i| this_monday + i}
+    @workers = Worker.all
+
   end
 
   def day
@@ -50,5 +52,7 @@ class WorkdaysController < ApplicationController
     @date_now = Date.current.days_since(@x)
 
     @time = 27.times.map.each_with_index {|i| Time.parse("9:00")+30.minutes*i}
+    @workers = Worker.all
+
   end
 end
