@@ -1,6 +1,12 @@
+p = link_to "月間表", workdays_month_path
+p = link_to "週間表", workdays_week_path
+
 h1 日間表
 
 p = @date_now
+
+span = link_to "Prev", workdays_day_path(p: @x)
+span = link_to "Next", workdays_day_path(n: @x)
 
 table.table.table-bordered
   thead
