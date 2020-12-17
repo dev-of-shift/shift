@@ -1,2 +1,8 @@
-p
-  | week
+h1 週間表
+
+table.table.table-bordered
+  thead
+    tr
+      th
+      - @week_calender.each do |c|
+        td = "#{c.day} #{@weeks[c.wday]}"

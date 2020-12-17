@@ -1,2 +1,10 @@
-p
-  | day
+h1 日間表
+
+p = @date_now
+
+table.table.table-bordered
+  thead
+    tr
+      th
+      - @time.each do |c|
+        td = c.strftime("%H:%M")
