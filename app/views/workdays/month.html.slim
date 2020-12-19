@@ -31,8 +31,8 @@ span = link_to "Next", workdays_month_path(n: @x)
           th = w.name
           - @calender.each do |c|
             td
-              = form_with(model: w, local: true) do |f|
-                = f.collection_select(:list_num, @work_lists, :id, :list_num)
+              = form_with(model: w, id: :select_form, method: :patch, local: true) do |f|
+                = f.collection_select(:list_num, @work_lists, :id, :list_num,{include_blank: true, selected: :list_num}, {:onchange => "submit: this.form"})
+                = f.hidden_field :list_day, value: c.strftime("%Y-%m-%d")
 
 = link_to "設定", places_path
-
