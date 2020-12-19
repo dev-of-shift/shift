@@ -20,6 +20,6 @@ class WorklistsController < ApplicationController
 
   private
   def worklist_params
-    params.require(:worklist).permit(:list_num, :list_day, :list_hour, :list_minutes)
+    params.require(:worklist).permit(:list_num, :list_day, :start_hour, :start_minutes, :end_hour, :end_minutes)
   end
 end

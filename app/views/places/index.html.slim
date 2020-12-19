@@ -43,16 +43,22 @@ h1 Worklist index
 - @worklists.each do |list|
   = form_with(model: list, local:true) do |f|
     = f.text_field :list_num
-    = f.text_field :list_hour
+    = f.text_field :start_hour
     a ：
-    = f.text_field :list_minutes
+    = f.text_field :start_minutes
+    a 〜
+    = f.text_field :end_hour
+    a ：
+    = f.text_field :end_minutes    
     = f.submit "変更を修正する", data: {confirm: "更新しますか？"}
     = link_to "削除", worklist_path(list), method: :delete, data: {confirm: "削除しますか？"}
 
 = form_with(model: @worklist, local:true) do |f|
   = f.text_field :list_num, placeholder: "略称"
-  = f.text_field :list_hour, placeholder: "開始時間（時）"
-  = f.text_field :list_minutes, placeholder: "開始時間（分）"
+  = f.text_field :start_hour, placeholder: "開始時間（時）"
+  = f.text_field :start_minutes, placeholder: "開始時間（分）"
+  = f.text_field :end_hour, placeholder: "終了時間（時）"
+  = f.text_field :end_minutes, placeholder: "終了時間（分）"
   = f.submit "リストに追加"
 
 p = link_to "月間表", workdays_month_path
