@@ -26,5 +26,12 @@ span = link_to "Next", workdays_month_path(n: @x)
           td = @weeks[c.wday]
 
     tbody
-      tr
-        th
+      - @workers.each do |w|
+        tr
+          th = w.name
+          - @calender.each do |c|
+            td
+              = form_with(model: w, local: true) do |f|
+                = f.collection_select(:list_num, @work_lists, :id, :list_num)
+
+= link_to "設定", places_path

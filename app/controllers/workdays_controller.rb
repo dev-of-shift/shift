@@ -9,6 +9,7 @@ class WorkdaysController < ApplicationController
     else
       @x = 0
     end
+
     # 現在の曜日と年月日
     @date_now = Date.current.months_since(@x)
 
@@ -17,6 +18,10 @@ class WorkdaysController < ApplicationController
     firstDay = @date_now.beginning_of_month
     firstDayIndex = firstDay.wday
     @calender = Array.new(35){|i| firstDay + (i - firstDayIndex)}
+
+    @workers = Worker.all
+
+    @work_lists = Worklist.all
 
   end
 
@@ -35,6 +40,9 @@ class WorkdaysController < ApplicationController
 
     this_monday = @date_now - (@date_now.wday - 1)
     @week_calender = Array.new(7){|i| this_monday + i}
+
+    @places_lists = Place.all
+
   end
 
   def day

@@ -29,10 +29,14 @@ def destroy
 end
 
 private
+
 def place_params
   params.require(:place).permit(:name)
 end
 
-
+def worker_params
+  params.require()
 end
 
+
+end

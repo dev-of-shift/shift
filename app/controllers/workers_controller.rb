@@ -22,7 +22,7 @@ class WorkersController < ApplicationController
 
 private
   def worker_params
-    params.require(:worker).permit(:name)
+    params.require(:worker).permit(:name, :place_id)
   end
 
 
