@@ -58,5 +58,7 @@ class WorkdaysController < ApplicationController
     @date_now = Date.current.days_since(@x)
 
     @time = 27.times.map.each_with_index {|i| Time.parse("9:00")+30.minutes*i}
+    @workers = Worker.all
+
   end
 end
