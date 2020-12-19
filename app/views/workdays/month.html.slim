@@ -33,5 +33,6 @@ span = link_to "Next", workdays_month_path(n: @x)
             td
               = form_with(model: w, local: true) do |f|
                 = f.collection_select(:list_num, @work_lists, :id, :list_num)
+                = f.date_field :list_day, value: c.strftime("%Y-%m-%d")
 
 = link_to "設定", places_path
