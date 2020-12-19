@@ -10,6 +10,17 @@ h1 Place index
   = f.text_field :name
   = f.submit "追加"
 
+h1 Shop index
+
+- @shops.each do |shop|
+  = form_with(model: shop, local: true) do |f|
+    = f.text_field :name
+    = f.submit "変更を修正する", data: {confirm: "更新しますか？"}
+    = link_to "削除", shop_path(shop), method: :delete, data: {confirm: "削除しますか？"}
+
+= form_with(model: @shop, local: true) do |f|
+  = f.text_field :name
+  = f.submit "追加"
 
 
 h1 Worker index
@@ -43,3 +54,7 @@ h1 Worklist index
   = f.text_field :list_hour, placeholder: "開始時間（時）"
   = f.text_field :list_minutes, placeholder: "開始時間（分）"
   = f.submit "リストに追加"
+
+p = link_to "月間表", workdays_month_path
+p = link_to "週間表", workdays_week_path
+p = link_to "日間表", workdays_day_path

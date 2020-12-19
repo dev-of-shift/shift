@@ -7,6 +7,8 @@ def index
   @workers = Worker.all
   @worklist = Worklist.new
   @worklists = Worklist.all
+  @shop = Shop.new
+  @shops = Shop.all
 end
 
 def create
