@@ -16,10 +16,4 @@ span = link_to "Next", workdays_day_path(n: @x)
         - @time.each do |c|
           td = c.strftime("%H:%M")
 
-  thead
-    tr
-  tbody
-    - @workers.each do |worker|
-      tr
-        td = worker.name
-        td
+= link_to "設定", places_path

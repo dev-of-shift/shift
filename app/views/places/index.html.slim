@@ -3,8 +3,8 @@ h1 Place index
 - @places.each do |place|
   = form_with(model: place, local: true) do |f|
     = f.text_field :name
-    = f.submit "変更を修正する", data: {confirm: "更新しますか？"} 
-    = link_to "削除", place_path(place), method: :delete, data: {confirm: "削除しますか？"} 
+    = f.submit "変更を修正する", data: {confirm: "更新しますか？"}
+    = link_to "削除", place_path(place), method: :delete, data: {confirm: "削除しますか？"}
 
 = form_with(model: @place, local: true) do |f|
   = f.text_field :name
@@ -15,11 +15,11 @@ h1 Place index
 h1 Worker index
 
 - @workers.each do |worker|
-  = form_with(model: worker, local: true) do |f|
+  = form_with(model: worker,method: :patch, local: true) do |f|
     = f.text_field :name
     = f.collection_select(:place_id, @places, :id, :name)
-    = f.submit "変更を修正する", data: {confirm: "更新しますか？"} 
-    = link_to "削除", worker_path(worker), method: :delete, data: {confirm: "削除しますか？"} 
+    = f.submit "変更を修正する", data: {confirm: "更新しますか？"}
+    = link_to "削除", worker_path(worker), method: :delete, data: {confirm: "削除しますか？"}
 
 = form_with(model: @worker, local: true) do |f|
   = f.text_field :name
@@ -34,9 +34,9 @@ h1 Worklist index
     = f.text_field :list_num
     = f.text_field :list_hour
     a ：
-    = f.text_field :list_minutes 
-    = f.submit "変更を修正する", data: {confirm: "更新しますか？"} 
-    = link_to "削除", worklist_path(list), method: :delete, data: {confirm: "削除しますか？"} 
+    = f.text_field :list_minutes
+    = f.submit "変更を修正する", data: {confirm: "更新しますか？"}
+    = link_to "削除", worklist_path(list), method: :delete, data: {confirm: "削除しますか？"}
 
 = form_with(model: @worklist, local:true) do |f|
   = f.text_field :list_num, placeholder: "略称"
