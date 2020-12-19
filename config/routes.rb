@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   resources :workers, only:[:index, :create, :update, :destroy]
   resources :places, only:[:index, :create, :update, :destroy]
   resources :worklists, only:[:index, :create, :update, :destroy]
+  resources :shops, only:[:index, :create, :update, :destroy]
 
+
+  root 'members#links'
 end
