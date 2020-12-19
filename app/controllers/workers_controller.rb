@@ -6,7 +6,6 @@ class WorkersController < ApplicationController
   end
 
   def update
-    binding.pry
     @worker = Worker.find(params[:id])
     @worker.update(worker_params)
     redirect_back(fallback_location: places_path)
