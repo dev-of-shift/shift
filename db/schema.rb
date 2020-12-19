@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_12_19_035240) do
+=======
+ActiveRecord::Schema.define(version: 2020_12_02_061247) do
+>>>>>>> 2c759ba... make seeds
 
   create_table "members", force: :cascade do |t|
     t.string "email", default: "", null: false
