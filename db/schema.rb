@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_19_061454) do
+ActiveRecord::Schema.define(version: 2020_12_19_072203) do
 
   create_table "members", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -60,8 +60,10 @@ ActiveRecord::Schema.define(version: 2020_12_19_061454) do
     t.string "list_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "list_hour"
-    t.integer "list_minutes"
+    t.integer "start_hour"
+    t.integer "start_minutes"
+    t.integer "end_hour"
+    t.integer "end_minutes"
   end
 
 end
